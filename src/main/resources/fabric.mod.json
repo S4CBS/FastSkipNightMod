@@ -1,0 +1,38 @@
+{
+	"schemaVersion": 1,
+	"id": "gothigodsleeper",
+	"version": "${version}",
+	"name": "GothiGodSleeper",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/gothigodsleeper/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"ru.gothi.gothigodsleeper.GothiGodSleeper"
+		],
+		"client": [
+			"ru.gothi.gothigodsleeper.GothiGodSleeperClient"
+		]
+	},
+	"mixins": [
+		"gothigodsleeper.mixins.json",
+		{
+			"config": "gothigodsleeper.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
