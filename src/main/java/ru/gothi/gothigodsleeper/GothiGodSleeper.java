@@ -42,13 +42,11 @@ public class GothiGodSleeper implements ModInitializer {
 		long timeOfDay = overworld.getTimeOfDay() % 24000;
 		boolean nowIsNight = timeOfDay >= 12530 && timeOfDay < 23000;
 
-		// ВАЖНО: Всегда обновляем счетчик игроков при проверке!
-		updatePlayerCount(server); // <--- ПЕРЕМЕСТИТЕ ЭТУ СТРОКУ СЮДА
+		updatePlayerCount(server);
 
 		if (!isNight && nowIsNight) {
 			isNight = true;
 			LOGGER.info("Ночь началась! Время: {}", timeOfDay);
-			// updatePlayerCount(server); // <--- УДАЛИТЕ ОТСЮДА
 		} else if (isNight && !nowIsNight) {
 			isNight = false;
 			sleepingPlayers.clear();
